@@ -1,0 +1,20 @@
+Index: swift-driver-release-6.2/Utilities/build-script-helper.py
+--- swift-driver-release-6.2/Utilities/build-script-helper.py.orig
++++ swift-driver-release-6.2/Utilities/build-script-helper.py
+@@ -202,13 +202,9 @@ def handle_invocation(args):
+       env['SWIFT_DRIVER_LIT_DIR'] = args.lit_test_dir
+     swiftpm('test', swift_exec, test_args, env)
+   elif args.action == 'install':
+-    if '-apple-macosx' in args.build_target:
+-      build_using_cmake(args, toolchain_bin, args.build_path, targets)
+-      install(args, args.build_path, targets)
+-    else:
+-      bin_path = swiftpm_bin_path(swift_exec, swiftpm_args, env)
+-      swiftpm('build', swift_exec, swiftpm_args, env)
+-      non_darwin_install(args, bin_path)
++    bin_path = args.build_path + '/' + args.build_target + '/' + args.configuration + '/bin'
++    build_using_cmake(args, toolchain_bin, args.build_path, targets)
++    non_darwin_install(args, bin_path)
+   else:
+     assert False, 'unknown action \'{}\''.format(args.action)
+ 

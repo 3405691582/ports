@@ -1,0 +1,14 @@
+llvm/llvm-project#125416
+Index: llvm-project-swift-release-6.2/llvm/lib/CodeGen/TargetLoweringBase.cpp
+--- llvm-project-swift-release-6.2/llvm/lib/CodeGen/TargetLoweringBase.cpp.orig
++++ llvm-project-swift-release-6.2/llvm/lib/CodeGen/TargetLoweringBase.cpp
+@@ -1961,6 +1961,9 @@ void TargetLoweringBase::insertSSPDeclarations(Module 
+ // Currently only support "standard" __stack_chk_guard.
+ // TODO: add LOAD_STACK_GUARD support.
+ Value *TargetLoweringBase::getSDagStackGuard(const Module &M) const {
++  if (getTargetMachine().getTargetTriple().isOSOpenBSD()) {
++    return M.getNamedValue("__guard_local");
++  }
+   return M.getNamedValue("__stack_chk_guard");
+ }
+ 

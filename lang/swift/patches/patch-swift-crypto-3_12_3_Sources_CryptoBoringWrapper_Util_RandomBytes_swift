@@ -1,0 +1,13 @@
+apple/swift-crypto#349
+Index: swift-crypto-3.12.3/Sources/CryptoBoringWrapper/Util/RandomBytes.swift
+--- swift-crypto-3.12.3/Sources/CryptoBoringWrapper/Util/RandomBytes.swift.orig
++++ swift-crypto-3.12.3/Sources/CryptoBoringWrapper/Util/RandomBytes.swift
+@@ -20,7 +20,7 @@ extension UnsafeMutableRawBufferPointer {
+             return
+         }
+ 
+-        #if canImport(Darwin) || os(Linux) || os(Android) || os(Windows) || os(FreeBSD)
++        #if canImport(Darwin) || os(Linux) || os(Android) || os(Windows) || os(FreeBSD) || os(OpenBSD)
+         var rng = SystemRandomNumberGenerator()
+         precondition(count <= self.count)
+ 
