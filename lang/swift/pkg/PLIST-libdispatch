@@ -1,0 +1,56 @@
+lib/swift/Block/
+lib/swift/Block/Block.h
+lib/swift/dispatch/
+lib/swift/dispatch/base.h
+lib/swift/dispatch/block.h
+lib/swift/dispatch/data.h
+lib/swift/dispatch/dispatch.h
+lib/swift/dispatch/group.h
+lib/swift/dispatch/introspection.h
+lib/swift/dispatch/io.h
+lib/swift/dispatch/module.modulemap
+lib/swift/dispatch/object.h
+lib/swift/dispatch/once.h
+lib/swift/dispatch/queue.h
+lib/swift/dispatch/semaphore.h
+lib/swift/dispatch/source.h
+lib/swift/dispatch/time.h
+lib/swift/openbsd/Dispatch.swiftmodule/
+lib/swift/openbsd/Dispatch.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/Dispatch.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+@so lib/swift/openbsd/libBlocksRuntime.so
+@so lib/swift/openbsd/libdispatch.so
+@so lib/swift/openbsd/libswiftDispatch.so
+lib/swift/os/
+lib/swift/os/generic_base.h
+lib/swift/os/generic_unix_base.h
+lib/swift/os/generic_win_base.h
+lib/swift/os/object.h
+lib/swift_static/Block/
+lib/swift_static/Block/Block.h
+lib/swift_static/dispatch/
+lib/swift_static/dispatch/base.h
+lib/swift_static/dispatch/block.h
+lib/swift_static/dispatch/data.h
+lib/swift_static/dispatch/dispatch.h
+lib/swift_static/dispatch/group.h
+lib/swift_static/dispatch/introspection.h
+lib/swift_static/dispatch/io.h
+lib/swift_static/dispatch/module.modulemap
+lib/swift_static/dispatch/object.h
+lib/swift_static/dispatch/once.h
+lib/swift_static/dispatch/queue.h
+lib/swift_static/dispatch/semaphore.h
+lib/swift_static/dispatch/source.h
+lib/swift_static/dispatch/time.h
+lib/swift_static/openbsd/Dispatch.swiftmodule/
+lib/swift_static/openbsd/Dispatch.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift_static/openbsd/Dispatch.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+@static-lib lib/swift_static/openbsd/libBlocksRuntime.a
+@static-lib lib/swift_static/openbsd/libdispatch.a
+@static-lib lib/swift_static/openbsd/libswiftDispatch.a
+lib/swift_static/os/
+lib/swift_static/os/generic_base.h
+lib/swift_static/os/generic_unix_base.h
+lib/swift_static/os/generic_win_base.h
+lib/swift_static/os/object.h

@@ -1,0 +1,5 @@
+@so lib/libIndexStore.so
+lib/swift/openbsd/XCTest.swiftmodule/
+lib/swift/openbsd/XCTest.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/XCTest.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+@so lib/swift/openbsd/libXCTest.so

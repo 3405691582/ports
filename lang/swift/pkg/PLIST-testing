@@ -1,0 +1,15 @@
+@so lib/swift/host/plugins/libTestingMacros.so
+lib/swift/openbsd/Testing.swiftcrossimport/
+lib/swift/openbsd/Testing.swiftcrossimport/Foundation.swiftoverlay
+lib/swift/openbsd/Testing.swiftmodule/
+lib/swift/openbsd/Testing.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/Testing.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/_TestDiscovery.swiftmodule/
+lib/swift/openbsd/_TestDiscovery.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/_TestDiscovery.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/_Testing_Foundation.swiftmodule/
+lib/swift/openbsd/_Testing_Foundation.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/_Testing_Foundation.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+@so lib/swift/openbsd/libTesting.so
+@static-lib lib/swift/openbsd/lib_TestDiscovery.a
+@so lib/swift/openbsd/lib_Testing_Foundation.so
