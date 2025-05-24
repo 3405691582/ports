@@ -1,0 +1,78 @@
+bin/sdk-module-lists/
+bin/sdk-module-lists/create-module-lists.sh
+bin/sdk-module-lists/fixed-clang-modules-appletvos.txt
+bin/sdk-module-lists/fixed-clang-modules-common.txt
+bin/sdk-module-lists/fixed-clang-modules-iosmac.txt
+bin/sdk-module-lists/fixed-clang-modules-iphoneos.txt
+bin/sdk-module-lists/fixed-clang-modules-macosx.txt
+bin/sdk-module-lists/fixed-clang-modules-watchos.txt
+bin/sdk-module-lists/fixed-swift-modules-appletvos.txt
+bin/sdk-module-lists/fixed-swift-modules-common.txt
+bin/sdk-module-lists/fixed-swift-modules-iosmac.txt
+bin/sdk-module-lists/fixed-swift-modules-iphoneos.txt
+bin/sdk-module-lists/fixed-swift-modules-macosx.txt
+bin/sdk-module-lists/fixed-swift-modules-watchos.txt
+bin/sdk-module-lists/infer-imports.py
+bin/swift
+bin/swift-api-checker.py
+bin/swift-api-digester
+bin/swift-autolink-extract
+@bin bin/swift-build-sdk-interfaces
+@bin bin/swift-build-tool
+bin/swift-cache-tool
+@bin bin/swift-demangle
+@bin bin/swift-driver
+@bin bin/swift-frontend
+@bin bin/swift-help
+bin/swift-legacy-driver
+@bin bin/swift-plugin-server
+bin/swift-symbolgraph-extract
+bin/swift-synthesize-interface
+bin/swiftc
+bin/swiftc-legacy-driver
+include/module.modulemap
+include/swift/
+include/swift/bridging
+include/swift/bridging.modulemap
+@man man/man1/swift.1
+share/doc/swift/
+share/doc/swift/diagnostics/
+share/doc/swift/diagnostics/actor-isolated-call.md
+share/doc/swift/diagnostics/availability-unrecognized-name.md
+share/doc/swift/diagnostics/clang-declaration-import.md
+share/doc/swift/diagnostics/conformance-isolation.md
+share/doc/swift/diagnostics/deprecated-declaration.md
+share/doc/swift/diagnostics/dynamic-callable-requirements.md
+share/doc/swift/diagnostics/error-in-future-swift-version.md
+share/doc/swift/diagnostics/existential-any.md
+share/doc/swift/diagnostics/existential-member-access-limitations.md
+share/doc/swift/diagnostics/implementation-only-deprecated.md
+share/doc/swift/diagnostics/isolated-conformances.md
+share/doc/swift/diagnostics/member-import-visibility.md
+share/doc/swift/diagnostics/missing-module-on-known-paths.md
+share/doc/swift/diagnostics/multiple-inheritance.md
+share/doc/swift/diagnostics/mutable-global-variable.md
+share/doc/swift/diagnostics/nominal-types.md
+share/doc/swift/diagnostics/nonisolated-nonsending-by-default.md
+share/doc/swift/diagnostics/opaque-type-inference.md
+share/doc/swift/diagnostics/preconcurrency-import.md
+share/doc/swift/diagnostics/property-wrapper-requirements.md
+share/doc/swift/diagnostics/protocol-type-non-conformance.md
+share/doc/swift/diagnostics/result-builder-methods.md
+share/doc/swift/diagnostics/sendable-closure-captures.md
+share/doc/swift/diagnostics/sendable-metatypes.md
+share/doc/swift/diagnostics/sending-closure-risks-data-race.md
+share/doc/swift/diagnostics/sending-risks-data-race.md
+share/doc/swift/diagnostics/strict-language-features.md
+share/doc/swift/diagnostics/strict-memory-safety.md
+share/doc/swift/diagnostics/string-interpolation-conformance.md
+share/doc/swift/diagnostics/temporary-pointers.md
+share/doc/swift/diagnostics/trailing-closure-matching.md
+share/doc/swift/diagnostics/unknown-warning-group.md
+share/swift/
+share/swift/LICENSE.txt
+share/swift/compatibility-symbols
+share/swift/diagnostics/
+share/swift/diagnostics/en.db
+share/swift/diagnostics/en.strings
+share/swift/features.json

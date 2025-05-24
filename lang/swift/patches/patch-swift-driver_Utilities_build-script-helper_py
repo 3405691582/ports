@@ -1,0 +1,16 @@
+Index: swift-driver/Utilities/build-script-helper.py
+--- swift-driver/Utilities/build-script-helper.py.orig
++++ swift-driver/Utilities/build-script-helper.py
+@@ -105,6 +105,12 @@ def get_swiftpm_options(args):
+       swiftpm_args += [
+         '-Xlinker', '-rpath', '-Xlinker', '$ORIGIN/../lib/swift/android',
+       ]
++    elif '-openbsd' in args.build_target:
++      swiftpm_args += [
++        '-Xlinker', '-rpath', '-Xlinker', '$ORIGIN/../lib/swift/openbsd',
++        '-Xlinker', '-z', '-Xlinker', 'origin',
++        '-Xlinker', '-rpath', '-Xlinker', '/usr/local/lib/swift/openbsd',
++      ]
+     else:
+       # Library rpath for swift, dispatch, Foundation, etc. when installing
+       swiftpm_args += [

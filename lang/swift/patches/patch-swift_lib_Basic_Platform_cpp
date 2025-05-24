@@ -1,0 +1,14 @@
+Index: swift/lib/Basic/Platform.cpp
+--- swift/lib/Basic/Platform.cpp.orig
++++ swift/lib/Basic/Platform.cpp
+@@ -150,7 +150,9 @@ bool swift::tripleRequiresRPathForSwiftLibrariesInOS(
+ }
+ 
+ bool swift::tripleBTCFIByDefaultInOpenBSD(const llvm::Triple &triple) {
+-  return triple.isOSOpenBSD() && triple.getArch() == llvm::Triple::aarch64;
++  return triple.isOSOpenBSD() && (
++    triple.getArch() == llvm::Triple::aarch64 || 
++    triple.getArch() == llvm::Triple::x86_64) ;
+ }
+ 
+ DarwinPlatformKind swift::getDarwinPlatformKind(const llvm::Triple &triple) {

@@ -1,0 +1,35 @@
+Index: swift/utils/build-presets.ini
+--- swift/utils/build-presets.ini.orig
++++ swift/utils/build-presets.ini
+@@ -3257,3 +3257,31 @@ install-swiftpm
+ install-swift-testing
+ install-swift-testing-macros
+ install-xctest
++
++[preset: bootstrap_stage0_openbsd]
++mixin-preset=bootstrap_stage0
++native-clang-tools-path=/usr/bin
++install-llvm=0
++install-prefix=/usr/local
++extra-cmake-options=
++  -DLLVM_TARGETS_TO_BUILD=AArch64;X86
++  -DBRIDGING_MODE=PURE
++
++[preset: bootstrap_stage1_openbsd]
++mixin-preset=bootstrap_stage1
++native-clang-tools-path=/usr/bin
++install-llvm=0
++install-prefix=/usr/local
++extra-cmake-options=
++  -DLLVM_TARGETS_TO_BUILD=AArch64;X86
++  -DBRIDGING_MODE=PURE
++
++[preset: bootstrap_stage2_openbsd]
++mixin-preset=bootstrap_stage2
++native-clang-tools-path=/usr/bin
++install-llvm=0
++install-prefix=/usr/local
++swift-install-components=autolink-driver;compiler;stdlib;sdk-overlay;toolchain-tools;license
++extra-cmake-options=
++  -DLLVM_TARGETS_TO_BUILD=AArch64;X86
++  -DBRIDGING_MODE=PURE

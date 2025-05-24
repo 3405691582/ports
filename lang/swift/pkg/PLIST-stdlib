@@ -1,0 +1,264 @@
+@so lib/libswiftDemangle.so
+lib/swift/
+lib/swift/FrameworkABIBaseline/
+lib/swift/FrameworkABIBaseline/README
+lib/swift/FrameworkABIBaseline/Swift/
+lib/swift/FrameworkABIBaseline/Swift/ABI/
+lib/swift/FrameworkABIBaseline/Swift/ABI/macos.json
+lib/swift/FrameworkABIBaseline/Swift/API/
+lib/swift/FrameworkABIBaseline/Swift/API/macos.json
+lib/swift/FrameworkABIBaseline/_Concurrency/
+lib/swift/FrameworkABIBaseline/_Concurrency/ABI/
+lib/swift/FrameworkABIBaseline/_Concurrency/ABI/macos.json
+lib/swift/FrameworkABIBaseline/nil.json
+lib/swift/_InternalSwiftScan/
+lib/swift/_InternalSwiftScan/DependencyScan.h
+lib/swift/_InternalSwiftScan/DependencyScanMacros.h
+lib/swift/_InternalSwiftScan/module.modulemap
+lib/swift/_InternalSwiftStaticMirror/
+lib/swift/_InternalSwiftStaticMirror/BinaryScan.h
+lib/swift/_InternalSwiftStaticMirror/StaticMirrorMacros.h
+lib/swift/_InternalSwiftStaticMirror/module.modulemap
+lib/swift/apinotes/
+lib/swift/apinotes/std.apinotes
+lib/swift/embedded/
+lib/swift/embedded/libcxxshim.h
+lib/swift/embedded/libcxxshim.modulemap
+lib/swift/embedded/libcxxstdlibshim.h
+lib/swift/host/
+lib/swift/host/SwiftBasicFormat.swiftmodule/
+lib/swift/host/SwiftBasicFormat.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftBasicFormat.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftCompilerPluginMessageHandling.swiftmodule/
+lib/swift/host/SwiftCompilerPluginMessageHandling.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftCompilerPluginMessageHandling.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftDiagnostics.swiftmodule/
+lib/swift/host/SwiftDiagnostics.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftDiagnostics.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftIDEUtils.swiftmodule/
+lib/swift/host/SwiftIDEUtils.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftIDEUtils.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftIfConfig.swiftmodule/
+lib/swift/host/SwiftIfConfig.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftIfConfig.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftLibraryPluginProvider.swiftmodule/
+lib/swift/host/SwiftLibraryPluginProvider.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftLibraryPluginProvider.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftOperators.swiftmodule/
+lib/swift/host/SwiftOperators.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftOperators.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftParser.swiftmodule/
+lib/swift/host/SwiftParser.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftParser.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftParserDiagnostics.swiftmodule/
+lib/swift/host/SwiftParserDiagnostics.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftParserDiagnostics.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftRefactor.swiftmodule/
+lib/swift/host/SwiftRefactor.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftRefactor.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftSyntax.swiftmodule/
+lib/swift/host/SwiftSyntax.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftSyntax.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftSyntaxBuilder.swiftmodule/
+lib/swift/host/SwiftSyntaxBuilder.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftSyntaxBuilder.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftSyntaxMacroExpansion.swiftmodule/
+lib/swift/host/SwiftSyntaxMacroExpansion.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftSyntaxMacroExpansion.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/SwiftSyntaxMacros.swiftmodule/
+lib/swift/host/SwiftSyntaxMacros.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/host/SwiftSyntaxMacros.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/host/compiler/
+@so lib/swift/host/compiler/lib_CompilerSwiftBasicFormat.so
+@so lib/swift/host/compiler/lib_CompilerSwiftCompilerPluginMessageHandling.so
+@so lib/swift/host/compiler/lib_CompilerSwiftDiagnostics.so
+@so lib/swift/host/compiler/lib_CompilerSwiftIDEUtils.so
+@so lib/swift/host/compiler/lib_CompilerSwiftIfConfig.so
+@so lib/swift/host/compiler/lib_CompilerSwiftLexicalLookup.so
+@so lib/swift/host/compiler/lib_CompilerSwiftOperators.so
+@so lib/swift/host/compiler/lib_CompilerSwiftParser.so
+@so lib/swift/host/compiler/lib_CompilerSwiftParserDiagnostics.so
+@so lib/swift/host/compiler/lib_CompilerSwiftSyntax.so
+@so lib/swift/host/compiler/lib_CompilerSwiftSyntaxBuilder.so
+@so lib/swift/host/compiler/lib_CompilerSwiftSyntaxMacroExpansion.so
+@so lib/swift/host/compiler/lib_CompilerSwiftSyntaxMacros.so
+@so lib/swift/host/compiler/lib_InternalSwiftScan.so
+@so lib/swift/host/libSwiftBasicFormat.so
+@so lib/swift/host/libSwiftCompilerPluginMessageHandling.so
+@so lib/swift/host/libSwiftDiagnostics.so
+@so lib/swift/host/libSwiftIDEUtils.so
+@so lib/swift/host/libSwiftIfConfig.so
+@so lib/swift/host/libSwiftInProcPluginServer.so
+@so lib/swift/host/libSwiftLibraryPluginProvider.so
+@so lib/swift/host/libSwiftOperators.so
+@so lib/swift/host/libSwiftParser.so
+@so lib/swift/host/libSwiftParserDiagnostics.so
+@so lib/swift/host/libSwiftRefactor.so
+@so lib/swift/host/libSwiftSyntax.so
+@so lib/swift/host/libSwiftSyntaxBuilder.so
+@so lib/swift/host/libSwiftSyntaxMacroExpansion.so
+@so lib/swift/host/libSwiftSyntaxMacros.so
+@so lib/swift/host/lib_InternalSwiftScan.so
+lib/swift/host/plugins/
+@so lib/swift/host/plugins/libObservationMacros.so
+@so lib/swift/host/plugins/libSwiftMacros.so
+lib/swift/migrator/
+lib/swift/migrator/ios4.json
+lib/swift/migrator/ios42.json
+lib/swift/migrator/macos4.json
+lib/swift/migrator/macos42.json
+lib/swift/migrator/overlay4.json
+lib/swift/migrator/overlay42.json
+lib/swift/migrator/tvos4.json
+lib/swift/migrator/tvos42.json
+lib/swift/migrator/watchos4.json
+lib/swift/migrator/watchos42.json
+lib/swift/openbsd/
+lib/swift/openbsd/Cxx.swiftmodule/
+lib/swift/openbsd/Cxx.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/Cxx.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/Cxx.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/Cxx.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/Cxx.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/Distributed.swiftmodule/
+lib/swift/openbsd/Distributed.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/Distributed.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/Distributed.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/Distributed.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/Distributed.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/Glibc.swiftmodule/
+lib/swift/openbsd/Glibc.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/Glibc.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/Glibc.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/Glibc.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/Glibc.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/Observation.swiftmodule/
+lib/swift/openbsd/Observation.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/Observation.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/Observation.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/Observation.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/Observation.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/RegexBuilder.swiftmodule/
+lib/swift/openbsd/RegexBuilder.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/RegexBuilder.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/RegexBuilder.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/RegexBuilder.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/RegexBuilder.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/Swift.swiftmodule/
+lib/swift/openbsd/Swift.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/Swift.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/Swift.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/Swift.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/Swift.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/SwiftOnoneSupport.swiftmodule/
+lib/swift/openbsd/SwiftOnoneSupport.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/SwiftOnoneSupport.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/SwiftOnoneSupport.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/SwiftOnoneSupport.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/SwiftOnoneSupport.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/Synchronization.swiftmodule/
+lib/swift/openbsd/Synchronization.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/Synchronization.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/Synchronization.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/Synchronization.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/Synchronization.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/_Builtin_float.swiftmodule/
+lib/swift/openbsd/_Builtin_float.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/_Builtin_float.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/_Builtin_float.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/_Builtin_float.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/_Builtin_float.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/_Concurrency.swiftmodule/
+lib/swift/openbsd/_Concurrency.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/_Concurrency.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/_Concurrency.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/_Concurrency.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/_Concurrency.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/_Differentiation.swiftmodule/
+lib/swift/openbsd/_Differentiation.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/_Differentiation.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/_Differentiation.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/_Differentiation.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/_Differentiation.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/_RegexParser.swiftmodule/
+lib/swift/openbsd/_RegexParser.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/_RegexParser.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/_RegexParser.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/_RegexParser.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/_RegexParser.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/_StringProcessing.swiftmodule/
+lib/swift/openbsd/_StringProcessing.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/_StringProcessing.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/_StringProcessing.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/_StringProcessing.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/_StringProcessing.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/_Volatile.swiftmodule/
+lib/swift/openbsd/_Volatile.swiftmodule/${SWIFT_TRIPLE}.abi.json
+lib/swift/openbsd/_Volatile.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift/openbsd/_Volatile.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift/openbsd/_Volatile.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift/openbsd/_Volatile.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift/openbsd/${LLVM_SPELLING_ARCH}/
+lib/swift/openbsd/${LLVM_SPELLING_ARCH}/SwiftGlibc.h
+lib/swift/openbsd/${LLVM_SPELLING_ARCH}/glibc.modulemap
+lib/swift/openbsd/${LLVM_SPELLING_ARCH}/swiftrt.o
+@so lib/swift/openbsd/lib_InternalSwiftStaticMirror.so
+lib/swift/openbsd/libcxxshim.h
+lib/swift/openbsd/libcxxshim.modulemap
+lib/swift/openbsd/libcxxstdlibshim.h
+@so lib/swift/openbsd/libswiftCore.so
+@static-lib lib/swift/openbsd/libswiftCxx.a
+@so lib/swift/openbsd/libswiftDistributed.so
+@so lib/swift/openbsd/libswiftGlibc.so
+@so lib/swift/openbsd/libswiftObservation.so
+@so lib/swift/openbsd/libswiftRegexBuilder.so
+@so lib/swift/openbsd/libswiftRemoteMirror.so
+@so lib/swift/openbsd/libswiftSwiftOnoneSupport.so
+@so lib/swift/openbsd/libswiftSynchronization.so
+@so lib/swift/openbsd/libswift_Builtin_float.so
+@so lib/swift/openbsd/libswift_Concurrency.so
+@so lib/swift/openbsd/libswift_Differentiation.so
+@so lib/swift/openbsd/libswift_RegexParser.so
+@so lib/swift/openbsd/libswift_StringProcessing.so
+@so lib/swift/openbsd/libswift_Volatile.so
+lib/swift/shims/
+lib/swift/shims/AssertionReporting.h
+lib/swift/shims/CoreFoundationShims.h
+lib/swift/shims/EmbeddedShims.h
+lib/swift/shims/FoundationShims.h
+lib/swift/shims/GlobalObjects.h
+lib/swift/shims/HeapObject.h
+lib/swift/shims/KeyPath.h
+lib/swift/shims/LibcOverlayShims.h
+lib/swift/shims/LibcShims.h
+lib/swift/shims/MetadataSections.h
+lib/swift/shims/ObjCShims.h
+lib/swift/shims/Random.h
+lib/swift/shims/RefCount.h
+lib/swift/shims/Reflection.h
+lib/swift/shims/RuntimeShims.h
+lib/swift/shims/RuntimeStubs.h
+lib/swift/shims/SwiftStdbool.h
+lib/swift/shims/SwiftStddef.h
+lib/swift/shims/SwiftStdint.h
+lib/swift/shims/System.h
+lib/swift/shims/Target.h
+lib/swift/shims/ThreadLocalStorage.h
+lib/swift/shims/UnicodeData.h
+lib/swift/shims/Visibility.h
+lib/swift/shims/_SwiftConcurrency.h
+lib/swift/shims/_SwiftDistributed.h
+lib/swift/shims/_SynchronizationShims.h
+lib/swift/shims/module.modulemap
+lib/swift/swiftToCxx/
+lib/swift/swiftToCxx/_SwiftCxxInteroperability.h
+lib/swift/swiftToCxx/_SwiftStdlibCxxOverlay.h
+lib/swift/swiftToCxx/experimental-interoperability-version.json
+lib/swift_static/
+lib/swift_static/openbsd/
+lib/swift_static/openbsd/Cxx.swiftmodule/
+lib/swift_static/openbsd/Cxx.swiftmodule/${SWIFT_TRIPLE}.private.swiftinterface
+lib/swift_static/openbsd/Cxx.swiftmodule/${SWIFT_TRIPLE}.swiftdoc
+lib/swift_static/openbsd/Cxx.swiftmodule/${SWIFT_TRIPLE}.swiftinterface
+lib/swift_static/openbsd/Cxx.swiftmodule/${SWIFT_TRIPLE}.swiftmodule
+lib/swift_static/openbsd/static-stdlib-args.lnk
