@@ -1,13 +1,13 @@
 COMMENT =		swift programming language
-DISTNAME =		release/6.2
-PKGNAME = 		swift-6.2
+DISTNAME =		release/6.2.0
+PKGNAME = 		swift-6.2.0
 CATEGORIES =		lang
 HOMEPAGE =		https://swift.org
 
 PERMIT_PACKAGE =	Yes
 PERMIT_DISTFILES =	Yes
 
-TAGNAME = 		release/6.2
+TAGNAME = 		release/6.2.0
 LLVM_TAGNAME =		stable/20240723
 DISPATCH_TAGNAME = 	main
 ARGPARSER_TAGNAME = 	1.4.0
@@ -154,5 +154,7 @@ do-install:
 	    --dispatch-build-dir ${WRKBUILD}/bootstrap2/libdispatch-openbsd-${LLVM_SPELLING_ARCH} \
 	    --prefix ${DESTDIR}/usr/local \
 	    --verbose
+
+	cp ${WRKBUILD}/bootstrap0/llvm-openbsd-${LLVM_SPELLING_ARCH}/lib/libIndexStore.so ${DESTDIR}/usr/local/lib
 
 .include <bsd.port.mk>

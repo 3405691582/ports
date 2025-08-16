@@ -1,6 +1,6 @@
-Index: swift-driver-release-6.2/Utilities/build-script-helper.py
---- swift-driver-release-6.2/Utilities/build-script-helper.py.orig
-+++ swift-driver-release-6.2/Utilities/build-script-helper.py
+Index: swift-driver-release-6.2.0/Utilities/build-script-helper.py
+--- swift-driver-release-6.2.0/Utilities/build-script-helper.py.orig
++++ swift-driver-release-6.2.0/Utilities/build-script-helper.py
 @@ -202,13 +202,9 @@ def handle_invocation(args):
        env['SWIFT_DRIVER_LIT_DIR'] = args.lit_test_dir
      swiftpm('test', swift_exec, test_args, env)

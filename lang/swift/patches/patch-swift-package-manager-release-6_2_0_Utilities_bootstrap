@@ -1,6 +1,7 @@
-Index: swift-package-manager-release-6.2/Utilities/bootstrap
---- swift-package-manager-release-6.2/Utilities/bootstrap.orig
-+++ swift-package-manager-release-6.2/Utilities/bootstrap
+swiftlang/swift-package-manager#9050
+Index: swift-package-manager-release-6.2.0/Utilities/bootstrap
+--- swift-package-manager-release-6.2.0/Utilities/bootstrap.orig
++++ swift-package-manager-release-6.2.0/Utilities/bootstrap
 @@ -121,6 +121,10 @@ def add_global_args(parser):
          "--reconfigure",
          action="store_true",

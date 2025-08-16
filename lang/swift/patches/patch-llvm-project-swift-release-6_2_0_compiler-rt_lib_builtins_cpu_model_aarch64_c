@@ -1,7 +1,7 @@
 llvm/llvm-project#104047
-Index: llvm-project-swift-release-6.2/compiler-rt/lib/builtins/cpu_model/aarch64.c
---- llvm-project-swift-release-6.2/compiler-rt/lib/builtins/cpu_model/aarch64.c.orig
-+++ llvm-project-swift-release-6.2/compiler-rt/lib/builtins/cpu_model/aarch64.c
+Index: llvm-project-swift-release-6.2.0/compiler-rt/lib/builtins/cpu_model/aarch64.c
+--- llvm-project-swift-release-6.2.0/compiler-rt/lib/builtins/cpu_model/aarch64.c.orig
++++ llvm-project-swift-release-6.2.0/compiler-rt/lib/builtins/cpu_model/aarch64.c
 @@ -47,7 +47,7 @@ _Bool __aarch64_have_lse_atomics = false;
  #elif defined(__ANDROID__)
  #include "aarch64/hwcap.inc"
