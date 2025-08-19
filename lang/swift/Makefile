@@ -103,12 +103,18 @@ do-build:
 	      -j${MAKE_JOBS} \
 	      --preset=bootstrap_stage0_openbsd \
 	      build_subdir=bootstrap0 install_destdir=${WRKBUILD}/install0
+	mkdir -p ${WRKBUILD}/bootstrap1 && \
+	    [ ! -e ${WRKBUILD}/bootstrap1/llvm-openbsd-${LLVM_SPELLING_ARCH} ] && \
+	    ln -s ${WRKBUILD}/bootstrap0/llvm-openbsd-${LLVM_SPELLING_ARCH}/ ${WRKBUILD}/bootstrap1/llvm-openbsd-${LLVM_SPELLING_ARCH} || true
 	env SWIFT_BUILD_ROOT=${WRKBUILD} \
 	    PATH=${WRKBUILD}/install0/usr/local/bin/:${PATH} \
 	    ${WRKSRC}/swift/utils/build-script \
 	      -j${MAKE_JOBS} \
 	      --preset=bootstrap_stage1_openbsd \
 	      build_subdir=bootstrap1 install_destdir=${WRKBUILD}/install1
+	mkdir -p ${WRKBUILD}/bootstrap2 && \
+	    [ ! -e ${WRKBUILD}/bootstrap2/llvm-openbsd-${LLVM_SPELLING_ARCH} ] && \
+	    ln -s ${WRKBUILD}/bootstrap0/llvm-openbsd-${LLVM_SPELLING_ARCH}/ ${WRKBUILD}/bootstrap2/llvm-openbsd-${LLVM_SPELLING_ARCH} || true
 	env SWIFT_BUILD_ROOT=${WRKBUILD} \
 	    PATH=${WRKBUILD}/install1/usr/local/bin/:${PATH} \
 	    ${WRKSRC}/swift/utils/build-script \
