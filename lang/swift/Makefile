@@ -123,17 +123,36 @@ do-build:
 	      build_subdir=bootstrap2 install_destdir=${WRKBUILD}/install2
 
 do-install:
-	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake --build ${WRKBUILD}/bootstrap2/swift-openbsd-${LLVM_SPELLING_ARCH} -- install-swift-components
-	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake --build ${WRKBUILD}/bootstrap2/libdispatch-openbsd-${LLVM_SPELLING_ARCH} -- install
-	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake --build ${WRKBUILD}/bootstrap2/libdispatch_static-openbsd-${LLVM_SPELLING_ARCH} -- install
-	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake --build ${WRKBUILD}/bootstrap2/foundation_macros-openbsd-${LLVM_SPELLING_ARCH} -- install
-	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake --build ${WRKBUILD}/bootstrap2/foundation-openbsd-${LLVM_SPELLING_ARCH} -- install
-	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake --build ${WRKBUILD}/bootstrap2/foundation_static-openbsd-${LLVM_SPELLING_ARCH} -- install
+	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --build ${WRKBUILD}/bootstrap2/swift-openbsd-${LLVM_SPELLING_ARCH} -- install-swift-components
+	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --build ${WRKBUILD}/bootstrap2/libdispatch-openbsd-${LLVM_SPELLING_ARCH} -- install
+	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --build ${WRKBUILD}/bootstrap2/libdispatch_static-openbsd-${LLVM_SPELLING_ARCH} -- install
+	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --build ${WRKBUILD}/bootstrap2/foundation_macros-openbsd-${LLVM_SPELLING_ARCH} -- install
+	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --build ${WRKBUILD}/bootstrap2/foundation-openbsd-${LLVM_SPELLING_ARCH} -- install
+	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --build ${WRKBUILD}/bootstrap2/foundation_static-openbsd-${LLVM_SPELLING_ARCH} -- install
 	cp ${WRKBUILD}/bootstrap0/llvm-openbsd-${LLVM_SPELLING_ARCH}/lib/libIndexStore.so ${DESTDIR}/usr/local/lib
-	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake --build ${WRKBUILD}/bootstrap2/xctest-openbsd-${LLVM_SPELLING_ARCH} -- install
-	echo env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake --build ${WRKBUILD}/bootstrap2/llbuild-openbsd-${LLVM_SPELLING_ARCH} -- install-swift-build-tool
-	echo env DESTDIR=${DESTDIR}/usr/local ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake --build ${WRKBUILD}/bootstrap2/swifttestingmacros-openbsd-${LLVM_SPELLING_ARCH} -- install
-	echo env DESTDIR=${DESTDIR}/usr/local ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake --build ${WRKBUILD}/bootstrap2/swifttesting-openbsd-${LLVM_SPELLING_ARCH} -- install
-	${WRKDIST}/swiftpm/Utilities/bootstrap install --install-only --release --swiftc-path ${DESTDIR}/usr/local/bin/swiftc --clang-path /usr/bin/clang --cmake-path ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake --ninja-path /usr/local/bin/ninja --build-dir ${WRKBUILD}/bootstrap2/swiftpm-openbsd-${LLVM_SPELLING_ARCH} --llbuild-build-dir ${WRKBUILD}/bootstrap2/llbuild-openbsd-${LLVM_SPELLING_ARCH} --dispatch-build-dir ${WRKBUILD}/bootstrap2/libdispatch-openbsd-${LLVM_SPELLING_ARCH} --verbose --prefix ${DESTDIR}/usr/local
+	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --build ${WRKBUILD}/bootstrap2/xctest-openbsd-${LLVM_SPELLING_ARCH} -- install
+	echo env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --build ${WRKBUILD}/bootstrap2/llbuild-openbsd-${LLVM_SPELLING_ARCH} -- install-swift-build-tool
+	echo env DESTDIR=${DESTDIR}/usr/local ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --build ${WRKBUILD}/bootstrap2/swifttestingmacros-openbsd-${LLVM_SPELLING_ARCH} -- install
+	echo env DESTDIR=${DESTDIR}/usr/local ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --build ${WRKBUILD}/bootstrap2/swifttesting-openbsd-${LLVM_SPELLING_ARCH} -- install
+	${WRKDIST}/swiftpm/Utilities/bootstrap install --install-only --release \
+	    --swiftc-path ${DESTDIR}/usr/local/bin/swiftc \
+	    --clang-path /usr/bin/clang \
+	    --cmake-path ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --ninja-path /usr/local/bin/ninja \
+	    --build-dir ${WRKBUILD}/bootstrap2/swiftpm-openbsd-${LLVM_SPELLING_ARCH} \
+	    --llbuild-build-dir ${WRKBUILD}/bootstrap2/llbuild-openbsd-${LLVM_SPELLING_ARCH} \
+	    --dispatch-build-dir ${WRKBUILD}/bootstrap2/libdispatch-openbsd-${LLVM_SPELLING_ARCH} \
+	    --prefix ${DESTDIR}/usr/local \
+	    --verbose
 
 .include <bsd.port.mk>
