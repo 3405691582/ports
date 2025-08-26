@@ -1,0 +1,13 @@
+apple/swift-crypto#352
+Index: swift-crypto-3.13.0/Tests/CryptoTests/SecureBytes/SecureBytesTests.swift
+--- swift-crypto-3.13.0/Tests/CryptoTests/SecureBytes/SecureBytesTests.swift.orig
++++ swift-crypto-3.13.0/Tests/CryptoTests/SecureBytes/SecureBytesTests.swift
+@@ -147,7 +147,7 @@ final class SecureBytesTests: XCTestCase {
+ 
+         base.withUnsafeBytes { XCTAssertEqual($0.count, 10) }
+         base.withUnsafeMutableBytes { XCTAssertEqual($0.count, 10) }
+-        base.backing._withVeryUnsafeMutableBytes { XCTAssertGreaterThanOrEqual($0.count, 16) }
++        base.backing._withVeryUnsafeMutableBytes(base.backing.allocatedCapacity) { XCTAssertGreaterThanOrEqual($0.count, 16) }
+     }
+ 
+     func testTheresOnlyOneRegion() {
