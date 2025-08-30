@@ -1,0 +1,12 @@
+Index: swift-package-manager-release-6.2.0/Package.swift
+--- swift-package-manager-release-6.2.0/Package.swift.orig
++++ swift-package-manager-release-6.2.0/Package.swift
+@@ -23,7 +23,7 @@ if let resourceDirPath = ProcessInfo.processInfo.envir
+     swiftpmLinkSettings = [.unsafeFlags([
+         "-no-toolchain-stdlib-rpath",
+         "-Xlinker", "-rpath",
+-        "-Xlinker", "$ORIGIN/../lib/swift/\(resourceDirPath)",
++        "-Xlinker", "$ORIGIN/../lib/swift/\(resourceDirPath):/usr/local/lib/swift/\(resourceDirPath)",
+     ])]
+     packageLibraryLinkSettings = [.unsafeFlags([
+         "-no-toolchain-stdlib-rpath",

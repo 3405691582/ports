@@ -1,0 +1,14 @@
+rpath hack for installed binaries.
+Do not upstream.
+Index: swift-corelibs-foundation-release-6.2.0/Sources/plutil/CMakeLists.txt
+--- swift-corelibs-foundation-release-6.2.0/Sources/plutil/CMakeLists.txt.orig
++++ swift-corelibs-foundation-release-6.2.0/Sources/plutil/CMakeLists.txt
+@@ -23,7 +23,7 @@ target_link_libraries(plutil PRIVATE
+ 	Foundation)
+ 
+ set_target_properties(plutil PROPERTIES
+-	INSTALL_RPATH "$ORIGIN/../lib/swift/${SWIFT_SYSTEM_NAME}")
++	INSTALL_RPATH "$ORIGIN/../lib/swift/${SWIFT_SYSTEM_NAME}:$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/swift/${SWIFT_SYSTEM_NAME}")
+ 
+ set_property(GLOBAL APPEND PROPERTY Foundation_EXPORTS plutil)
+ install(TARGETS plutil

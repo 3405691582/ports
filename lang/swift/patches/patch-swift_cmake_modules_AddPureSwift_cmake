@@ -1,0 +1,27 @@
+rpath hack for installed binaries.
+Do not upstream.
+Index: swift/cmake/modules/AddPureSwift.cmake
+--- swift/cmake/modules/AddPureSwift.cmake.orig
++++ swift/cmake/modules/AddPureSwift.cmake
+@@ -125,6 +125,11 @@ function(_set_pure_swift_link_flags name relpath_to_li
+         # NOTE: This relies on the ABI being the same as the builder.
+         "$ORIGIN/${relpath_to_lib_dir}swift/${SWIFT_SDK_${SWIFT_HOST_VARIANT_SDK}_LIB_SUBDIR}"
+     )
++    set_property(TARGET ${name}
++      APPEND PROPERTY INSTALL_RPATH
++        "${CMAKE_INSTALL_PREFIX}/lib/swift/${SWIFT_SDK_${SWIFT_HOST_VARIANT_SDK}_LIB_SUBDIR}"
++    )
++
+     # NOTE: At this point we don't have any pure swift executables/shared
+     # libraries required for building runtime/stdlib. So we don't need to add
+     # RPATH to the builder's runtime.
+@@ -430,6 +435,9 @@ function(add_pure_swift_host_tool name)
+     set_property(TARGET ${name}
+       APPEND PROPERTY INSTALL_RPATH
+         "$ORIGIN/../lib/swift/host")
++    set_property(TARGET ${name}
++      APPEND PROPERTY INSTALL_RPATH
++        "${CMAKE_INSTALL_PREFIX}/lib/swift/host")
+   endif()
+ 
+   set_property(TARGET ${name}

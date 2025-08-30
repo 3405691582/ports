@@ -1,0 +1,24 @@
+rpath hack for installed binaries.
+Do not upstream.
+Index: swift/cmake/modules/AddSwift.cmake
+--- swift/cmake/modules/AddSwift.cmake.orig
++++ swift/cmake/modules/AddSwift.cmake
+@@ -630,6 +630,7 @@ function(_add_swift_runtime_link_flags target relpath_
+ 
+   set_property(TARGET ${target} PROPERTY BUILD_WITH_INSTALL_RPATH YES)
+   set_property(TARGET ${target} APPEND PROPERTY INSTALL_RPATH "${swift_runtime_rpath}")
++  set_property(TARGET ${target} APPEND PROPERTY INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib/swift/${SWIFT_SDK_${SWIFT_HOST_VARIANT_SDK}_LIB_SUBDIR}")
+ endfunction()
+ 
+ # Add a new Swift host library.
+@@ -991,6 +992,10 @@ function(add_swift_host_tool executable)
+         TARGET ${executable}
+         APPEND PROPERTY INSTALL_RPATH
+           "$ORIGIN/../${extra_relative_rpath}lib/swift/host/compiler")
++      set_property(
++        TARGET ${executable}
++        APPEND PROPERTY INSTALL_RPATH
++          "${CMAKE_INSTALL_PREFIX}/lib/swift/host/compiler")
+     endif()
+   endif()
+ 
