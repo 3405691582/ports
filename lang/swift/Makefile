@@ -1,12 +1,24 @@
-COMMENT =		swift programming language
-DISTNAME =		release/6.2.0
-PKGNAME = 		swift-6.2.0
+COMMENT-main =		swift programming language
+COMMENT-libdispatch =	swift dispatch library
+COMMENT-foundation =	swift foundation library
+COMMENT-swiftpm =	swift package manager
+COMMENT-xctest =	swift xctest library
+COMMENT-testing =	swift testing library
+PKGNAME-main = 		swift-6.2.0
+PKGNAME-libdispatch = 	swift-libdispatch-6.2.0
+PKGNAME-foundation = 	swift-foundation-6.2.0
+PKGNAME-swiftpm = 	swift-swiftpm-6.2.0
+PKGNAME-xctest = 	swift-xctest-6.2.0
+PKGNAME-xctest = 	swift-testing-6.2.0
 CATEGORIES =		lang
 HOMEPAGE =		https://swift.org
 
 PERMIT_PACKAGE =	Yes
 PERMIT_DISTFILES =	Yes
 
+MULTI_PACKAGES =	-main -libdispatch -foundation -swiftpm -xctest -testing
+
+DISTNAME =		swift-6.2.0
 TAGNAME = 		release/6.2.0
 LLVM_TAGNAME =		stable/20240723
 DISPATCH_TAGNAME = 	main
@@ -147,11 +159,11 @@ do-install:
 	cp ${WRKBUILD}/bootstrap0/llvm-openbsd-${LLVM_SPELLING_ARCH}/lib/libIndexStore.so ${DESTDIR}/usr/local/lib
 	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
 	    --build ${WRKBUILD}/bootstrap2/xctest-openbsd-${LLVM_SPELLING_ARCH} -- install
-	echo env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	echo env DESTDIR=${DESTDIR} ${CMAKE_BIN} \
 	    --build ${WRKBUILD}/bootstrap2/llbuild-openbsd-${LLVM_SPELLING_ARCH} -- install-swift-build-tool
-	echo env DESTDIR=${DESTDIR}/usr/local ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	env DESTDIR=${DESTDIR}/usr/local ${CMAKE_BIN} \
 	    --build ${WRKBUILD}/bootstrap2/swifttestingmacros-openbsd-${LLVM_SPELLING_ARCH} -- install
-	echo env DESTDIR=${DESTDIR}/usr/local ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	env DESTDIR=${DESTDIR}/usr/local ${CMAKE_BIN} \
 	    --build ${WRKBUILD}/bootstrap2/swifttesting-openbsd-${LLVM_SPELLING_ARCH} -- install
 	${WRKDIST}/swiftpm/Utilities/bootstrap install --install-only --release \
 	    --swiftc-path ${DESTDIR}/usr/local/bin/swiftc \
