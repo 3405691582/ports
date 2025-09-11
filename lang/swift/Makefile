@@ -122,6 +122,15 @@ do-build:
 	      --preset=bootstrap_stage2_openbsd \
 	      build_subdir=bootstrap2 install_destdir=${WRKBUILD}/install2
 
+	${WRKSRC}/swift-driver/Utilities/build-script-helper.py build \
+	    --package-path ${WRKSRC}/swift-driver-release-6.2.0 \
+	    --build-path ${WRKBUILD}/bootstrap2/swiftdriver-openbsd-aarch64 \
+	    --configuration release \
+	    --toolchain ${WRKBUILD}/install2/usr/local \
+	    --ninja-bin /usr/local/bin/ninja \
+	    --cmake-bin ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --dispatch-build-dir ${WRKBUILD}/bootstrap2/libdispatch-openbsd-${LLVM_SPELLING_ARCH}
+
 do-install:
 	env DESTDIR=${DESTDIR} ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
 	    --build ${WRKBUILD}/bootstrap2/swift-openbsd-${LLVM_SPELLING_ARCH} -- install-swift-components
@@ -154,6 +163,14 @@ do-install:
 	    --dispatch-build-dir ${WRKBUILD}/bootstrap2/libdispatch-openbsd-${LLVM_SPELLING_ARCH} \
 	    --prefix ${DESTDIR}/usr/local \
 	    --verbose
+	${WRKSRC}/swift-driver/Utilities/build-script-helper.py install \
+	    --package-path ${WRKSRC}/swift-driver-release-6.2.0 \
+	    --build-path ${WRKBUILD}/bootstrap2/swiftdriver-openbsd-aarch64 \
+	    --configuration release \
+	    --toolchain ${DESTDIR}/usr/local \
+	    --ninja-bin /usr/local/bin/ninja \
+	    --cmake-bin ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
+	    --dispatch-build-dir ${WRKBUILD}/bootstrap2/libdispatch-openbsd-${LLVM_SPELLING_ARCH}
 
 	cp ${WRKBUILD}/bootstrap0/llvm-openbsd-${LLVM_SPELLING_ARCH}/lib/libIndexStore.so ${DESTDIR}/usr/local/lib
 

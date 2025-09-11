@@ -19,11 +19,14 @@ bin/swift-api-checker.py
 bin/swift-api-digester
 bin/swift-autolink-extract
 bin/swift-build
+@bin bin/swift-build-sdk-interfaces
 @bin bin/swift-build-tool
 bin/swift-cache-tool
 @bin bin/swift-demangle
+@bin bin/swift-driver
 bin/swift-experimental-sdk
 @bin bin/swift-frontend
+@bin bin/swift-help
 @bin bin/swift-package
 bin/swift-package-collection
 bin/swift-package-registry
