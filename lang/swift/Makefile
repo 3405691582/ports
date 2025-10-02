@@ -161,9 +161,9 @@ do-install:
 	    --build ${WRKBUILD}/bootstrap2/xctest-openbsd-${LLVM_SPELLING_ARCH} -- install
 	echo env DESTDIR=${DESTDIR} ${CMAKE_BIN} \
 	    --build ${WRKBUILD}/bootstrap2/llbuild-openbsd-${LLVM_SPELLING_ARCH} -- install-swift-build-tool
-	env DESTDIR=${DESTDIR}/usr/local ${CMAKE_BIN} \
+	env DESTDIR=${DESTDIR}/usr/local ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
 	    --build ${WRKBUILD}/bootstrap2/swifttestingmacros-openbsd-${LLVM_SPELLING_ARCH} -- install
-	env DESTDIR=${DESTDIR}/usr/local ${CMAKE_BIN} \
+	env DESTDIR=${DESTDIR}/usr/local ${WRKBUILD}/cmake-openbsd-${LLVM_SPELLING_ARCH}/bin/cmake \
 	    --build ${WRKBUILD}/bootstrap2/swifttesting-openbsd-${LLVM_SPELLING_ARCH} -- install
 	${WRKDIST}/swiftpm/Utilities/bootstrap install --install-only --release \
 	    --swiftc-path ${DESTDIR}/usr/local/bin/swiftc \
