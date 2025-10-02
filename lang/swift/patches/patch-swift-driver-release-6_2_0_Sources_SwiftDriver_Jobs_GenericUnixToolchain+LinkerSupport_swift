@@ -1,0 +1,14 @@
+x86_64 nobtcfi
+
+Index: swift-driver-release-6.2.0/Sources/SwiftDriver/Jobs/GenericUnixToolchain+LinkerSupport.swift
+--- swift-driver-release-6.2.0/Sources/SwiftDriver/Jobs/GenericUnixToolchain+LinkerSupport.swift.orig
++++ swift-driver-release-6.2.0/Sources/SwiftDriver/Jobs/GenericUnixToolchain+LinkerSupport.swift
+@@ -128,7 +128,7 @@ extension GenericUnixToolchain {
+         }
+       }
+ 
+-      if targetTriple.os == .openbsd && targetTriple.arch == .aarch64 {
++      if targetTriple.os == .openbsd && (targetTriple.arch == .aarch64 || targetTriple.arch == .x86_64) {
+         let btcfiEnabled = targetInfo.target.openbsdBTCFIEnabled ?? false
+         if !btcfiEnabled {
+           commandLine.appendFlag("-Xlinker")

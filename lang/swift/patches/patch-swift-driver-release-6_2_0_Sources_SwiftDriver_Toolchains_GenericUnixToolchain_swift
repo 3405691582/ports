@@ -1,0 +1,14 @@
+x86_64 nobtcfi
+
+Index: swift-driver-release-6.2.0/Sources/SwiftDriver/Toolchains/GenericUnixToolchain.swift
+--- swift-driver-release-6.2.0/Sources/SwiftDriver/Toolchains/GenericUnixToolchain.swift.orig
++++ swift-driver-release-6.2.0/Sources/SwiftDriver/Toolchains/GenericUnixToolchain.swift
+@@ -163,7 +163,7 @@ public final class GenericUnixToolchain: Toolchain {
+       try commandLine.appendPath(VirtualPath(path: sysroot.pathString))
+     }
+ 
+-    if driver.targetTriple.os == .openbsd && driver.targetTriple.arch == .aarch64 {
++    if driver.targetTriple.os == .openbsd && (driver.targetTriple.arch == .aarch64 || driver.targetTriple.arch == .x86_64) {
+       if frontendTargetInfo.target.openbsdBTCFIEnabled ?? false {
+         commandLine.appendFlag(.Xcc)
+         commandLine.appendFlag("-Xclang=-msign-return-address=non-leaf")
