@@ -1,7 +1,7 @@
 Index: swift-driver/Sources/SwiftDriver/Toolchains/GenericUnixToolchain.swift
 --- swift-driver/Sources/SwiftDriver/Toolchains/GenericUnixToolchain.swift.orig
 +++ swift-driver/Sources/SwiftDriver/Toolchains/GenericUnixToolchain.swift
-@@ -163,7 +163,7 @@ public final class GenericUnixToolchain: Toolchain {
+@@ -170,7 +170,7 @@ public final class GenericUnixToolchain: Toolchain {
        try commandLine.appendPath(VirtualPath(path: sysroot.pathString))
      }
  

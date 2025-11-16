@@ -1,11 +1,10 @@
 Index: swift/utils/build-presets.ini
 --- swift/utils/build-presets.ini.orig
 +++ swift/utils/build-presets.ini
-@@ -3257,3 +3257,31 @@ install-swiftpm
- install-swift-testing
+@@ -3359,6 +3359,34 @@ install-swift-testing
  install-swift-testing-macros
  install-xctest
-+
+ 
 +[preset: bootstrap_stage0_openbsd]
 +mixin-preset=bootstrap_stage0
 +native-clang-tools-path=/usr/bin
@@ -33,3 +32,7 @@ Index: swift/utils/build-presets.ini
 +extra-cmake-options=
 +  -DLLVM_TARGETS_TO_BUILD=AArch64;X86
 +  -DBRIDGING_MODE=PURE
++
+ [preset: wasm_stdlib,macos]
+ 
+ mixin-preset=mixin_buildbot_install_components_with_clang
