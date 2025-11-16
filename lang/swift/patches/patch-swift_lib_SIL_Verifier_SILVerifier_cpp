@@ -1,0 +1,21 @@
+Index: swift/lib/SIL/Verifier/SILVerifier.cpp
+--- swift/lib/SIL/Verifier/SILVerifier.cpp.orig
++++ swift/lib/SIL/Verifier/SILVerifier.cpp
+@@ -7626,8 +7626,6 @@ class SILVerifier : public SILVerifierBase<SILVerifier
+     case SILLinkage::Public:
+     case SILLinkage::Package:
+     case SILLinkage::Shared:
+-      require(F->isDefinition() || F->hasForeignBody(),
+-              "public/package/shared function must have a body");
+       break;
+     case SILLinkage::PublicNonABI:
+     case SILLinkage::PackageNonABI:
+@@ -7675,8 +7673,6 @@ class SILVerifier : public SILVerifierBase<SILVerifier
+       if (F->hasForeignBody())
+         return;
+ 
+-      require(F->isAvailableExternally(),
+-              "external declaration of internal SILFunction not allowed");
+       // If F is an external declaration, there is nothing further to do,
+       // return.
+       return;

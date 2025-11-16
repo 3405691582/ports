@@ -5,7 +5,7 @@ COMMENT-foundation =	swift foundation library
 COMMENT-swiftpm =	swift package manager
 COMMENT-xctest =	swift xctest library
 COMMENT-testing =	swift testing library
-V =			6.2.0
+V =			6.3
 PKGNAME-main = 		swift-${V}
 PKGNAME-stdlib = 	swift-stdlib-${V}
 PKGNAME-libdispatch = 	swift-libdispatch-${V}
@@ -58,15 +58,15 @@ SUBST_VARS +=		LLVM_SPELLING_ARCH SWIFT_TRIPLE
 
 DISTNAME =		swift-${V}
 TAGNAME = 		release/${V}
-LLVM_TAGNAME =		stable/20240723
+LLVM_TAGNAME =		swift/release/${V}
 DISPATCH_TAGNAME = 	swift-DEVELOPMENT-SNAPSHOT-2025-10-02-a
-ARGPARSER_TAGNAME = 	1.4.0
-COLLECTIONS_TAGNAME = 	1.2.0
+ARGPARSER_TAGNAME = 	1.5.1
+COLLECTIONS_TAGNAME = 	1.1.6
 CRYPTO_TAGNAME = 	3.13.0
-CERTIFICATES_TAGNAME = 	1.10.0
+CERTIFICATES_TAGNAME = 	1.10.1
 ASN1_TAGNAME = 		1.3.2
 SYSTEM_TAGNAME = 	1.5.0
-SQLITE_TAGNAME = 	1.0.1
+SQLITE_TAGNAME = 	1.0.7
 CMAKE_TAGNAME = 	3.30.2
 SITES =			https://github.com/
 DISTFILES = 		swiftlang/swift/archive/refs/heads/${TAGNAME}.tar.gz \
@@ -133,18 +133,12 @@ do-build:
 	      -j${MAKE_JOBS} \
 	      --preset=bootstrap_stage0_openbsd \
 	      build_subdir=stage0 install_destdir=${WRKBUILD}/install0
-	mkdir -p ${WRKBUILD}/stage1 && \
-	    [ ! -e ${WRKBUILD}/stage1/llvm-openbsd-${LLVM_SPELLING_ARCH} ] && \
-	    ln -s ${WRKBUILD}/stage0/llvm-openbsd-${LLVM_SPELLING_ARCH}/ ${WRKBUILD}/stage1/llvm-openbsd-${LLVM_SPELLING_ARCH} || true
 	env SWIFT_BUILD_ROOT=${WRKBUILD} \
 	    PATH=${WRKBUILD}/install0/usr/local/bin/:${PATH} \
 	    ${WRKSRC}/swift/utils/build-script \
 	      -j${MAKE_JOBS} \
 	      --preset=bootstrap_stage1_openbsd \
 	      build_subdir=stage1 install_destdir=${WRKBUILD}/install1
-	mkdir -p ${WRKBUILD}/stage2 && \
-	    [ ! -e ${WRKBUILD}/stage2/llvm-openbsd-${LLVM_SPELLING_ARCH} ] && \
-	    ln -s ${WRKBUILD}/stage0/llvm-openbsd-${LLVM_SPELLING_ARCH}/ ${WRKBUILD}/stage2/llvm-openbsd-${LLVM_SPELLING_ARCH} || true
 	env SWIFT_BUILD_ROOT=${WRKBUILD} \
 	    PATH=${WRKBUILD}/install1/usr/local/bin/:${PATH} \
 	    ${WRKSRC}/swift/utils/build-script \

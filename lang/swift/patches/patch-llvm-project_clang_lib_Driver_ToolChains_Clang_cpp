@@ -1,0 +1,12 @@
+Index: llvm-project/clang/lib/Driver/ToolChains/Clang.cpp
+--- llvm-project/clang/lib/Driver/ToolChains/Clang.cpp.orig
++++ llvm-project/clang/lib/Driver/ToolChains/Clang.cpp
+@@ -1442,7 +1442,7 @@ static void CollectARMPACBTIOptions(const ToolChain &T
+                                        options::OPT_mbranch_protection_EQ)
+                      : Args.getLastArg(options::OPT_mbranch_protection_EQ);
+   if (!A) {
+-    if (Triple.isOSOpenBSD() && isAArch64) {
++    if (false) {
+       CmdArgs.push_back("-msign-return-address=non-leaf");
+       CmdArgs.push_back("-msign-return-address-key=a_key");
+       CmdArgs.push_back("-mbranch-target-enforce");

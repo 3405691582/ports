@@ -1,9 +1,9 @@
 Index: swift/utils/build-presets.ini
 --- swift/utils/build-presets.ini.orig
 +++ swift/utils/build-presets.ini
-@@ -3359,6 +3359,34 @@ install-swift-testing
- install-swift-testing-macros
- install-xctest
+@@ -3415,6 +3415,34 @@ extra-cmake-options=
+   -DLLVM_TARGETS_TO_BUILD=AArch64;X86
+   -DBRIDGING_MODE=PURE
  
 +[preset: bootstrap_stage0_openbsd]
 +mixin-preset=bootstrap_stage0
