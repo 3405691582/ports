@@ -5,6 +5,9 @@ COMMENT-foundation =	swift foundation library
 COMMENT-swiftpm =	swift package manager
 COMMENT-xctest =	swift xctest library
 COMMENT-testing =	swift testing library
+COMMENT-format =	swift formatting library
+COMMENT-lsp =		swift language server
+COMMENT-docc =		swift documentation compiler
 V =			6.3
 PKGNAME-main = 		swift-${V}
 PKGNAME-stdlib = 	swift-stdlib-${V}
@@ -13,13 +16,16 @@ PKGNAME-foundation = 	swift-foundation-${V}
 PKGNAME-swiftpm = 	swift-swiftpm-${V}
 PKGNAME-xctest = 	swift-xctest-${V}
 PKGNAME-testing = 	swift-testing-${V}
+PKGNAME-format = 	swift-format-${V}
+PKGNAME-lsp = 		swift-sourcekit-lsp-${V}
+PKGNAME-docc = 		swift-docc-${V}
 CATEGORIES =		lang
 HOMEPAGE =		https://swift.org
 
 PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -stdlib -libdispatch -foundation -swiftpm \
-			-xctest -testing
+			-xctest -testing -format -lsp -docc
 
 DIST_SUBDIR =		swift
 
@@ -104,6 +110,9 @@ ASN1_TAGNAME = 		1.3.2
 SYSTEM_TAGNAME = 	1.5.0
 SQLITE_TAGNAME = 	1.0.7
 CMAKE_TAGNAME = 	3.30.2
+NIO_TAGNAME =		2.91.0
+ATOMICS_TAGNAME = 	1.2.0
+TOOLS_TAGNAME =		0.0.9
 DIST_TUPLE += \
 	github swiftlang swift ${TAGNAME} swift \
 	github swiftlang swift-cmark ${TAGNAME} cmark \
@@ -135,7 +144,17 @@ DIST_TUPLE += \
 	github apple swift-argument-parser ${ARGPARSER_TAGNAME} \
 		swift-argument-parser \
 	github apple swift-collections ${COLLECTIONS_TAGNAME} \
-		swift-collections
+		swift-collections \
+	github swiftlang swift-docc-render-artifact ${TAGNAME} swift-docc-render-artifact \
+	github swiftlang swift-docc ${TAGNAME} swift-docc \
+	github swiftlang swift-tools-protocols ${TOOLS_TAGNAME} swift-tools-protocols \
+	github swiftlang sourcekit-lsp ${TAGNAME} sourcekit-lsp  \
+	github swiftlang indexstore-db ${TAGNAME} indexstore-db \
+	github apple swift-nio ${NIO_TAGNAME} swift-nio \
+	github apple swift-markdown ${TAGNAME} swift-markdown \
+	github apple swift-lmdb ${TAGNAME} swift-lmdb \
+	github apple swift-docc-symbolkit ${TAGNAME} swift-docc-symbolkit \
+	github apple swift-atomics ${ATOMICS_TAGNAME} swift-atomics
 
 BOOTSTRAP_V =	 ${V}
 SITES.bootstrap = \
@@ -181,17 +200,26 @@ do-build:
 	      --install-prefix=${TRUEPREFIX} \
 	      --llvm-install-components=IndexStore \
 	      --llvm-targets-to-build=host \
+<<<<<<< HEAD
 	      --release -A \
 	      --install-swift \
 	      --swift-install-components="${SWIFT_COMPONENTS}" \
 	      --install-libdispatch \
+=======
+	      --swift-install-components=${SWIFT_COMPONENTS} \
+	      --release -A --install-swift \
+	      --libdispatch --install-libdispatch \
+>>>>>>> 3ca6670bac8 (wip docc, sourcekit-lsp)
 	      --foundation --install-foundation \
 	      --xctest --install-xctest \
 	      --swift-testing --install-swift-testing \
 	      --swift-testing-macros --install-swift-testing-macros \
 	      --llbuild \
 	      --swiftpm --install-swiftpm \
-	      --swift-driver --install-swift-driver
+	      --swift-driver --install-swift-driver \
+	      --swiftformat --install-swiftformat \
+	      --sourcekit-lsp --install-sourcekit-lsp \
+	      --swiftdocc --install-swiftdocc
 
 do-install:
 	${SETENV} DESTDIR=${DESTDIR} ${CMAKE_BIN} --build \
@@ -250,6 +278,28 @@ do-install:
 	    --cmake-bin ${CMAKE_BIN} \
 	    --dispatch-build-dir \
 		${WRKBUILD}/toolchain/libdispatch-${SWIFT_SUFFIX}
+	${WRKSRC}/sourcekit-lsp/Utilities/build-script-helper.py install \
+	    --package-path ${WRKSRC}/sourcekit-lsp \
+	    --build-path ${WRKBUILD}/toolchain/unified-swiftpm-build-openbsd-${LLVM_SPELLING_ARCH} \
+	    --configuration release \
+	    --toolchain ${DESTDIR}/${TRUEPREFIX} \
+	    --ninja-bin ${NINJA_BIN} \
+	    --multiroot-data-file ${WRKSRC}/swift/utils/build_swift/resources/SwiftPM-Unified-Build.xcworkspace \
+	    --prefix ${DESTDIR}/${TRUEPREFIX}
+	${WRKSRC}/swift-format/build-script-helper.py install \
+	    --toolchain ${DESTDIR}/${TRUEPREFIX} \
+	    --configuration release \
+	    --build-path ${WRKBUILD}/toolchain/unified-swiftpm-build-openbsd-${LLVM_SPELLING_ARCH} \
+	    --multiroot-data-file ${WRKSRC}/swift/utils/build_swift/resources/SwiftPM-Unified-Build.xcworkspace \
+	    --prefix ${DESTDIR}/${TRUEPREFIX}
+	${WRKSRC}/swift-docc/build-script-helper.py install \
+	    --toolchain ${DESTDIR}/${TRUEPREFIX} \
+	    --configuration release \
+	    --build-dir ${WRKBUILD}/toolchain/unified-swiftpm-build-openbsd-${LLVM_SPELLING_ARCH} \
+	    --multiroot-data-file ${WRKSRC}/swift/utils/build_swift/resources/SwiftPM-Unified-Build.xcworkspace \
+	    --install-dir ${DESTDIR}/${TRUEPREFIX}/bin
+	mkdir -p ${DESTDIR}/${TRUEPREFIX}/share/docc/render
+	rsync -a ${WRKSRC}/swift-docc-render-artifact/dist/ ${DESTDIR}/${TRUEPREFIX}/share/docc/render
 
 .PHONY: bootstrap
 bootstrap: patch
