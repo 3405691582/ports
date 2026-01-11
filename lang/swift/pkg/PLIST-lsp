@@ -1,0 +1,3 @@
+@bin bin/sourcekit-lsp
+@so lib/libSwiftSourceKitClientPlugin.so
+@so lib/libSwiftSourceKitPlugin.so
