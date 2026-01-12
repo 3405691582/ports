@@ -8,6 +8,7 @@ COMMENT-testing =	swift testing library
 COMMENT-format =	swift formatting library
 COMMENT-lsp =		swift language server
 COMMENT-docc =		swift documentation compiler
+COMMENT-editor =	swift emacs and vim integration
 V =			6.3
 PKGNAME-main = 		swift-${V}
 PKGNAME-stdlib = 	swift-stdlib-${V}
@@ -19,6 +20,7 @@ PKGNAME-testing = 	swift-testing-${V}
 PKGNAME-format = 	swift-format-${V}
 PKGNAME-lsp = 		swift-sourcekit-lsp-${V}
 PKGNAME-docc = 		swift-docc-${V}
+PKGNAME-editor = 	swift-editor-integration-${V}
 CATEGORIES =		lang
 HOMEPAGE =		https://swift.org
 

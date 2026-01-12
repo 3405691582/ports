@@ -1,0 +1,13 @@
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/swift-mode.el
+share/vim/
+share/vim/vim73/
+share/vim/vim73/ftdetect/
+share/vim/vim73/ftdetect/sil.vim
+share/vim/vim73/ftdetect/swift.vim
+share/vim/vim73/ftdetect/swiftgyb.vim
+share/vim/vim73/syntax/
+share/vim/vim73/syntax/sil.vim
+share/vim/vim73/syntax/swift.vim
+share/vim/vim73/syntax/swiftgyb.vim
