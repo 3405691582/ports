@@ -1,0 +1,15 @@
+Index: MODULE.bazel
+--- MODULE.bazel.orig
++++ MODULE.bazel
+@@ -43,6 +43,11 @@ bazel_dep(name = "zstd-jni", version = "1.5.6-9")
+ bazel_dep(name = "apple_support", version = "1.24.5")
+ bazel_dep(name = "rules_cc", version = "0.2.14")
+ 
++local_path_override(
++    module_name = "rules_cc",
++    path = "../rules_cc-0.2.16/",
++)
++
+ # The starlark rules in @rules_cc are hidden behind macros but docgen needs to
+ # load the rule class directly, so we need to expose the cc_compatibility_proxy
+ # repo for access to the symbols

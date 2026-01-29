@@ -1,0 +1,11 @@
+Index: rules_cc-0.2.14/cc/private/toolchain/bsd_cc_toolchain_config.bzl
+--- rules_cc-0.2.14/cc/private/toolchain/bsd_cc_toolchain_config.bzl.orig
++++ rules_cc-0.2.14/cc/private/toolchain/bsd_cc_toolchain_config.bzl
+@@ -84,6 +84,7 @@ def _impl(ctx):
+                     flag_group(
+                         flags = [
+                             "-lc++",
++                            "-lc++abi", "-lm", "-lexecinfo", "-lpthread",
+                             "-Wl,-z,relro,-z,now",
+                             "-no-canonical-prefixes",
+                         ],

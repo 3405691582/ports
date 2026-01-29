@@ -3,7 +3,7 @@ BROKEN-sparc64 = libsingle_line_formatter.jar failed: Worker process did not ret
 # ./src/tools/singlejar/mapped_file_posix.inc only supports 64-bit UNIX.
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
-VERSION =		6.5.0
+VERSION =		9.0.0
 
 COMMENT =		polyglot build tool
 HOMEPAGE =		https://bazel.build/
@@ -17,36 +17,22 @@ CATEGORIES =		devel
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		${COMPILER_LIBCXX} c m
-COMPILER_LANGS =	c++
-COMPILER =		base-clang ports-gcc
-
 SITES =			https://github.com/bazelbuild/bazel/releases/download/${VERSION}/
 
-ABSEIL_VER =		20230802.1
-DIST_TUPLE =		github abseil abseil-cpp ${ABSEIL_VER} .
+RULES_CC_VER = 		0.2.14
+DIST_TUPLE =		github bazelbuild rules_cc ${RULES_CC_VER} rules_cc-${RULES_CC_VER}
 
-MODULES =		java lang/python
-MODJAVA_VER =		17
+MODULES =		java
+MODJAVA_VER =		21
 
 BUILD_DEPENDS =		archivers/zip \
 			shells/bash
-
-EXTRACT_ONLY =		${DISTFILES}
 
 # Disable stripping. The `bazel` binary contains an embedded zip file;
 # stripping the binary removes this zip file, breaking the binary.
 INSTALL_STRIP =
 
 MAKE_ENV =		VERBOSE=yes
-
-# The bundled version of abseil is from 2021 and isn't compatible with clang-16.
-# It also needs some patches we copy from devel/abseil.
-post-patch:
-	cp ${FULLDISTDIR}/abseil-abseil-cpp-${ABSEIL_VER}.tar.gz \
-		${WRKSRC}/derived/distdir/${ABSEIL_VER}.tar.gz
-	mkdir ${WRKSRC}/third_party/abseil
-	cp ${FILESDIR}/patch-absl* ${WRKSRC}/third_party/abseil
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
